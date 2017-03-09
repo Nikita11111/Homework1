@@ -28,6 +28,9 @@ sub calculate {
 	my $i;
         my $b;
 until ($uspex) {
+    if ((($shcet == 3) && (%pary)) || ($shcet <= 2)) {
+	print "It is impossible";
+	last;}
     $i = 0;
     $uspex = 1;
     %hash = %hash1;
