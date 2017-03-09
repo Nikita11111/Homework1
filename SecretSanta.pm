@@ -29,7 +29,7 @@ sub calculate {
         my $b;
 until ($uspex) {
     if ((($shcet == 3) && (%pary)) || ($shcet <= 2)) {
-	print "It is impossible";
+	print "It is impossible\n";
 	last;}
     $i = 0;
     $uspex = 1;
