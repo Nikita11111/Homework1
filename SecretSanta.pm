@@ -37,17 +37,17 @@ until ($uspex) {
     @res = ();
     while (keys(%hash) - 1) {
         $b =int rand($shcet); 
-        if (($i != $b) && ((!exists $pary{$b}) || ($pary{$i} ne $pary{$b})) && (exists $hash{$b}))  {  
+        if (($i != $b) && ((!exists $pary{$b}) || (!exists $pary{$i}) || ($pary{$i} ne $pary{$b})) && (exists $hash{$b}))  {  
        	 push @res,[$hash{$i}, $hash{$b}];
        	 delete $hash{$i};
        	 $i = $b;}
         else { 
-            if ((keys(%hash) == 2) && (exists $pary{$b}) && ($pary{$i} eq $pary{$b}) && ($i != $b)) { 
+            if ((keys(%hash) == 2) && (exists $pary{$b}) && (exists $pary{$i}) && ($pary{$i} eq $pary{$b}) && ($i != $b)) { 
                 $uspex = 0;
                 last;    }
               } }
 
-	if ((!exists $pary{0}) || ($pary{0} != $pary{$i}) && ($uspex)) {
+	if ((!exists $pary{0}) || (!exists $pary{$i}) || ($pary{0} != $pary{$i}) && ($uspex)) {
    	 push @res, [$hash{$i}, $hash1{0}]; 
 			}
 	else { $uspex = 0};
